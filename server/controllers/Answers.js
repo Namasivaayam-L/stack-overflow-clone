@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import Questions from '../models/Questions'
 import User from '../models/auth'
-import { updateReputations } from './reputation'
+// import { updateReputations } from './reputation'
 
 export const postAnswer = async (req, res) => {
     // const { id: _id } = req.params
@@ -77,7 +77,7 @@ export const addReply = async (req,res) => {
             { _id },
             { $set:{'answer':question.answer}}
         )
-        await updateReputations(userAnswered,reply)
+        // await updateReputations(userAnswered,reply)
         res.status(200).send({message:'reply added successfully'})
         } catch (error) {
             res.status(500).send({message:error+'reply failed to add'})
