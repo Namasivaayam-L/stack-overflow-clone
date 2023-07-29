@@ -1,27 +1,27 @@
 import OTP from '../models/otp'
 import User from '../models/auth'
-import Mailer from '../utilities/mailer'
+import sendOTP from '../utilities/messager'
 
 export const generateOTP = async (req, res) => {
     try {
-	    var user = await User.findOne({email: req.body.email})
+	    var user = await User.findOne({phno: req.body.phno})
 	    if (user) {
-	        console.log('server ctrl genOTP genOTP');
-	        if(!await OTP.findOne({email: req.body.email})){
+	        console.log('server ctrl genOTP');
+	        if(!await OTP.findOne({phno: req.body.phno})){
 	            var otp = new OTP({
-	            email: req.body.email,
+	            phno: req.body.phno,
 	            otp: (Math.floor((Math.random()*10000)+1)).toString(),
 	            expiresIn: new Date().getTime() + 300*1000
 	            })
 	            await otp.save()
 	        } else {
-	            var otp = await OTP.findOneAndUpdate({email: req.body.email},{
+	            var otp = await OTP.findOneAndUpdate({phno: req.body.phno},{
 	                otp: Math.floor((Math.random()*10000)+1),
 	                expiresIn: new Date().getTime() + 300*1000
 	            },
 	            {returnDocument:'after'})
 	        }
-	        const otpStatus = Mailer(otp)
+	        const otpStatus = sendOTP(otp)
 	        if (otpStatus){
 	            return res.status(200).send({message:'Mail Sent Successfully'})
 	        }else {
@@ -37,7 +37,7 @@ export const generateOTP = async (req, res) => {
 
 export const verifyOTP = async (req, res) => {
     try {
-		var user = await OTP.findOne({ email: req.body.email })
+		var user = await OTP.findOne({ phno: req.body.phno })
 		if (user) {
 			if(req.body.recvOTP === user.otp){
 				return res.status(200).send({message:true})

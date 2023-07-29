@@ -26,7 +26,6 @@ const UserSchema = mongoose.Schema({
     },
     following: [{type: mongoose.Schema.ObjectId, ref: 'User'}],
     followers: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
-    reputations: {type:Number,default:0},
   })
   
   UserSchema

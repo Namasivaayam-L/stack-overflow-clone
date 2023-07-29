@@ -46,11 +46,13 @@ const NewsFeed = () => {
       setPosts(updatedPosts)
     }
   return (
-    <Card sx={{ width:'100%'}}>
-    <Typography type="title" >
-      Newsfeed
+    <Card sx={{
+      width: '100%',
+    }}>
+    <Typography type="title" variant='h5' align='center' color={'black'} sx={{backgroundColor:'rgb(255, 153, 0)'}}>
+      Feed
     </Typography>
-    <Divider/>
+    <Divider/> 
     <NewPost addUpdate={addPost}/>
     <Divider/>
     <PostList removeUpdate={removePost} posts={posts}/>

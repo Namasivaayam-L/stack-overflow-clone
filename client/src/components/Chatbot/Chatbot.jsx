@@ -6,7 +6,7 @@ import SupportWindow from './SupportWindow.jsx'
 const Chatbot = () => {
     const ref = useRef(null)
     const [visible, setVisible] = useState(false)
-
+    const [botAcitvated, setActivated] = useState(false)
     useEffect(() => {
         function handleClickOutside(event) {
             if (ref.current && !ref.current.contains(event.target)) {
@@ -19,9 +19,10 @@ const Chatbot = () => {
         } 
     }, [ref, visible])
   return (
-      <div ref={ref}>
+      !botAcitvated && <div ref={ref}>
           <SupportWindow
               visible={visible}
+              botAct={setActivated}
           />
           <AvatarChatbot
               onClick={ ()=> setVisible(!visible) }

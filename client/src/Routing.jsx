@@ -17,7 +17,6 @@ import SMHome from './pages/SocialMedia/Home/SMHome'
 import SMUsers from './pages/SocialMedia/User/SMUsers'
 import EditProfile from './pages/SocialMedia/User/EditProfile';
 import Profile from './pages/SocialMedia/User/Profile';
-// import PrivateRoute from './api/PrivateRoute';
 
 const Routing = () => {
   return (    
@@ -34,7 +33,7 @@ const Routing = () => {
       <Route path='/Payment' element={< StripeForm />}/>
       <Route path='/Success' element={< Success />}/>
       <Route path='/Failure' element={< Failure />} />
-      
+
       <Route path="/SocialMedia" element={<SMHome />} />
       <Route path="/SocialMedia/Users" element={<SMUsers/>}/>
       <Route path="/SocialMedia/User/edit/:userId" element={<EditProfile/>}/>

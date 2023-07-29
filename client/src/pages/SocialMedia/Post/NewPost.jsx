@@ -11,9 +11,11 @@ import Avatar from "@mui/material/Avatar";
 import Icon from "@mui/material/Icon";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
-
 import auth from "../../../api/auth-helper";
 import { create } from "../../../api/api-post";
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+
 
 const NewPost = (props) => {
   const [values, setValues] = useState({
@@ -52,9 +54,10 @@ const NewPost = (props) => {
     const value = name === "photo" ? event.target.files[0] : event.target.value;
     setValues({ ...values, [name]: value });
   };
-  const photoURL = values.user._id
-    ? process.env.REACT_APP_NODE_JS + "posts/photo/" + values.user._id
-    : process.env.REACT_APP_NODE_JS + "posts/defaultPhoto/";
+  // const photoURL = values.user._id
+  //   ? process.env.REACT_APP_NODE_JS + "posts/photo/" + values.user._id
+  //   : process.env.REACT_APP_NODE_JS + "posts/defaultPhoto/";
+  var User = useSelector((state) => (state.currentUserReducer))
 
   return (
     <div
@@ -64,24 +67,40 @@ const NewPost = (props) => {
       }}
     >
       <Card
-        styles={{
+        style={{
           maxWidth: 600,
           margin: "auto",
           marginBottom: "3px",
-          backgroundColor: "rgba(65, 150, 136, 0.09)",
           boxShadow: "none",
         }}
       >
-        <CardHeader
-          avatar={<Avatar src={photoURL} />}
-          title={values.user.name}
-          styles={{
-            paddingTop: 8,
-            paddingBottom: 8,
-          }}
-        />
+        <div style={{
+          marginTop: '5px',
+          border: '1px solid orange',
+          borderRadius: '10% / 100%',
+          display:'flex'
+        }}>
+          <Avatar
+            backgroundColor='#009dff'
+            px='10px' py='5px'
+            borderRadius='50%'
+            color='white'
+            sx={{padding:'5px',margin:'5px'}}
+          >
+            <Link to={`/Users/${User.result._id}`} style={{ color: 'white', textDecoration: 'none' }}>
+              {User.result.name.charAt(0).toUpperCase()}
+            </Link>
+          </Avatar>
+          <CardHeader
+            title={values.user.name}
+            style={{
+              paddingTop: 8,
+              paddingBottom: 8,
+            }}
+          />
+        </div>
         <CardContent
-          styles={{
+          style={{
             backgroundColor: "white",
             paddingTop: 0,
             paddingBottom: 0,
@@ -93,18 +112,18 @@ const NewPost = (props) => {
             rows="3"
             value={values.text}
             onChange={handleChange("text")}
-            styles={{
+            style={{
               marginLeft: "2px",
               marginRight: "2px",
-              width: "90%",
+              width: "100%",
             }}
             margin="normal"
-            inputProps={{ maxLength: 60 }}
-          /><br/>
+            inputProps={{ maxLength: 90 }}
+          /><br />
           <input
             accept="image/*"
             onChange={handleChange("photo")}
-            styles={{
+            style={{
               display: "none",
             }}
             id="icon-button-file"
@@ -121,7 +140,7 @@ const NewPost = (props) => {
             >
               <PhotoCamera />
             </IconButton>
-          </label>{" "}
+          </label> 
           <span
             styles={{
               verticalAlign: "super",
@@ -131,7 +150,7 @@ const NewPost = (props) => {
           </span>
           {values.error && (
             <Typography component="p" color="error">
-              <Icon color="error" styles={{}}>
+              <Icon color="error">
                 error
               </Icon>
               {values.error}
@@ -140,11 +159,11 @@ const NewPost = (props) => {
         </CardContent>
         <CardActions>
           <Button
-            color="primary"
+            color="orange"
             variant="contained"
             disabled={values.text === ""}
             onClick={clickPost}
-            styles={{
+            style={{
               margin: "2px",
             }}
           >

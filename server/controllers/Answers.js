@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 import Questions from '../models/Questions'
 import User from '../models/auth'
-// import { updateReputations } from './reputation'
 
 export const postAnswer = async (req, res) => {
     // const { id: _id } = req.params
@@ -63,8 +62,6 @@ export const addReply = async (req,res) => {
     try {
         const user = await User.findById(userId)
         const question = await Questions.findById(_id)
-        // console.log(question['answer']);
-        // const sentence = 'This movie was great!';
         var userAnswered = ''
         for (const answer of question.answer) {
             if (answer['_id'] == answerId) {
@@ -72,12 +69,10 @@ export const addReply = async (req,res) => {
                 answer['replies'].push({userId:userId,userAnswered:user.name,reply:reply})
             }
         }
-        // console.log(question['answer'])
         await Questions.updateOne(
             { _id },
             { $set:{'answer':question.answer}}
         )
-        // await updateReputations(userAnswered,reply)
         res.status(200).send({message:'reply added successfully'})
         } catch (error) {
             res.status(500).send({message:error+'reply failed to add'})

@@ -125,7 +125,7 @@ export default function Profile() {
              auth.isAuthenticated().user && auth.isAuthenticated().user._id === values.user._id
              ? (<ListItemSecondaryAction>
                   <Link to={"/SocialMedia/User/edit/" + values.user._id}>
-                    <IconButton aria-label="Edit" color="primary">
+                    <IconButton aria-label="Edit" color="orange">
                       <Edit/>
                     </IconButton>
                   </Link>

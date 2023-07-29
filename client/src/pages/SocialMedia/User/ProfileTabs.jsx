@@ -20,8 +20,8 @@ export default function ProfileTabs ( props ){
           <Tabs
             value={tab}
             onChange={handleTabChange}
-            indicatorColor="primary"
-            textColor="primary"
+            indicatorColor="orange"
+            textColor="orange"
             variant="fullWidth"
           >
             <Tab label="Posts" />

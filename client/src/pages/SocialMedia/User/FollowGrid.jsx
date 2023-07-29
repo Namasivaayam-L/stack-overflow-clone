@@ -4,7 +4,9 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
+import { useSelector } from 'react-redux'
 export default function FollowGrid(props) {
+  var User = useSelector((state) => (state.currentUserReducer))
   return (
     <div
       styles={{
@@ -28,26 +30,27 @@ export default function FollowGrid(props) {
         {props.people.map((person, i) => {
           return (
             <Grid style={{ height: 220 }} key={i}>
-              <Link to={"/SocialMedia/User/" + person._id}>
+              {/* <Link to={"/SocialMedia/User/" + person._id}> */}
                 <Avatar
-                  src={
-                    process.env.REACT_APP_NODE_JS + "posts/photo/" + person._id
-                  }
-                  styles={{
-                    width: "60%",
-                    height: "60%",
-                    margin: "auto",
-                  }}
-                />
+                  backgroundColor='#009dff'
+                  px='10px' py='5px'
+                  borderRadius='50%'
+                  color='white'
+                  sx={{padding:'5px',margin:'5px'}}
+                >
+                  <Link to={`/Users/${User.result._id}`} style={{ color: 'white', textDecoration: 'none' }}>
+                    {User.result.name.charAt(0).toUpperCase()}
+                  </Link>
+                </Avatar> 
                 <Typography
-                  styles={{
-                    textAlign: "center",
+                  style={{
+                    textAlign: "center",  
                     marginTop: 10,
                   }}
                 >
                   {person.name}
                 </Typography>
-              </Link>
+              {/* </Link> */}
             </Grid>
           );
         })}

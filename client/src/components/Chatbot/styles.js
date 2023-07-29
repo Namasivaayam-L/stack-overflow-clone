@@ -1,4 +1,4 @@
-import chatbotimg from '../../assets/chatbot.jpg'
+import chatbotimg from '../../assets/26569089_5100_9_10.jpg'
 export const styles = {
     chatWithMeButton: {
         cursor: 'pointer',
@@ -42,7 +42,7 @@ export const styles = {
         backgroundColor: 'white',
         // Border
         borderRadius: '12px',
-        border: `2px solid #7a39e0`,
+        border: `2px solid #17ead1`,
         overflow: 'hidden',
         // Shadow
         boxShadow: '0px 0px 16px 6px rgba(0, 0, 0, 0.33)',
@@ -59,7 +59,7 @@ export const styles = {
         top: '-45px',
         width: '100%',
         height: '308px',
-        backgroundColor: '#7a39e0',
+        backgroundColor: '#17ead1',
         transform: 'skewY(-12deg)',
     },
     topText: { 
@@ -76,13 +76,13 @@ export const styles = {
         outline: 'none',
         padding: '12px',
         borderRadius: '12px',
-        border: '2px solid #7a39e0',
+        border: '2px solid #17ead1',
     },
     bottomText: { 
         position: 'absolute', 
         width: '100%', 
         top: '58%', 
-        color: '#7a39e0', 
+        color: '#17ead1', 
         fontSize: '18px', 
         fontWeight: '500' 
     },
@@ -94,7 +94,7 @@ export const styles = {
         backgroundColor: 'white',
     },
     loadingIcon: { 
-        color: '#7a39e0', 
+        color: '#17ead1', 
         position: 'absolute', 
         top: 'calc(50% - 51px)', 
         left: 'calc(50% - 51px)',  

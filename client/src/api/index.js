@@ -28,6 +28,6 @@ export const addReply = (id,userId,answerId,reply) => API.patch(`/answer/reply/:
 
 export const fetchAllUsers = () => API.get('/users/getAllUsers')
 export const updateProfile = (id, updateData) => API.patch(`/users/update/${id}`, updateData)
-export const generateOTP = (email) => API.post('/verify/email',{email})
-export const verifyOTP = (email,recvOTP) => API.post('/verify/otp',{email,recvOTP})
+export const generateOTP = (phno) => API.post('/verify/phno',{phno})
+export const verifyOTP = (phno,recvOTP) => API.post('/verify/otp',{phno,recvOTP})
 export const searchStackOverflow = (question) => API.post('/search/stackoverflow',{question})

@@ -12,7 +12,7 @@ const AvatarChatbot = props => {
                 ...styles.avatarHello,
                 ...{opacity: hovered ? '1':'0'}
               }}  
-          >Hey I am Namachu!
+          >Hey I am Don!
           </div>
           <div
             className='transition-3'
@@ -21,7 +21,7 @@ const AvatarChatbot = props => {
             onClick={ ()=> props.onClick && props.onClick()}  
             style={{
                 ...styles.chatWithMeButton,
-                ...{border: hovered ? '4px solid #f9f0ff' : '4px solid #7a39e0'} 
+                ...{border: hovered ? '4px solid #f9f0ff' : '4px solid #000000'} 
             }} 
           /> 
 

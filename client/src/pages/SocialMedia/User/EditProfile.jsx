@@ -149,7 +149,7 @@ export default function EditProfile() {
           }
         </CardContent>
         <CardActions>
-          <Button color="primary" variant="contained" onClick={clickSubmit} styles={{
+          <Button color="orange" variant="contained" onClick={clickSubmit} styles={{
     margin: 'auto',
     marginBottom: '2px'
   }}>Submit</Button>

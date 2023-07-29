@@ -8,14 +8,13 @@ import ListItemSecondaryAction from "@mui/material/ListItemSecondaryAction";
 import ListItemText from "@mui/material/ListItemText";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import { findPeople, follow } from "./../../../api/api-user";
 import auth from "./../../../api/auth-helper";
 import Snackbar from "@mui/material/Snackbar";
 import { orange, teal } from "@mui/material/colors";
-
+  
 export default function FindPeople() {
   const [values, setValues] = useState({
     users: [],
@@ -103,7 +102,17 @@ export default function FindPeople() {
                       marginRight: "1px",
                     }}
                   >
-                    <Avatar src={process.env.REACT_APP_NODE_JS+'posts/photo/' + item._id} />
+                <Avatar
+                  backgroundColor='#009dff'
+                  px='10px' py='5px'
+                  borderRadius='50%'
+                  color='white'
+                  sx={{padding:'5px',margin:'5px'}}
+                >
+                  <Link to={`/Users/${item._id}`} style={{ color: 'white', textDecoration: 'none' }}>
+                    {item.name.charAt(0).toUpperCase()}
+                  </Link>
+                </Avatar> 
                   </ListItemAvatar>
                   <ListItemText primary={item.name} />
                   <ListItemSecondaryAction
@@ -111,21 +120,10 @@ export default function FindPeople() {
                       right: "1px",
                     }}
                   >
-                    <Link to={"/SocialMedia/User/" + item._id}>
-                      <IconButton
-                        variant="contained"
-                        color="secondary"
-                        styles={{
-                          verticalAlign: "middle",
-                        }}
-                      >
-                        {/* <ViewIcon /> */}
-                      </IconButton>
-                    </Link>
                     <Button
                       aria-label="Follow"
                       variant="contained"
-                      color="primary"
+                      color="orange"
                       onClick={() => {
                         clickFollow(item, i);
                       }}
