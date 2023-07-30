@@ -1,7 +1,7 @@
 const signout = async () => {
   try {
     localStorage.removeItem('Profile')
-    let response = await fetch(process.env.REACT_APP_NODE_JS+'users/signout/', { method: 'GET' })
+    let response = await fetch(process.env.REACT_APP_NODE_JS+'/users/signout/', { method: 'GET' })
     return await response.json()
   } catch(err) {
     console.log(err)

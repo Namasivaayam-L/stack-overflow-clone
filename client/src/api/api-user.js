@@ -1,6 +1,6 @@
 const create = async (user) => {
   try {
-    let response = await fetch(process.env.REACT_APP_NODE_JS+'users/create', {
+    let response = await fetch(process.env.REACT_APP_NODE_JS+'/users/create', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -16,7 +16,7 @@ const create = async (user) => {
 
 const list = async (signal) => {
   try {
-    let response = await fetch(process.env.REACT_APP_NODE_JS+'users/create', {
+    let response = await fetch(process.env.REACT_APP_NODE_JS+'/users/create', {
       method: 'GET',
       signal: signal
     })
@@ -28,7 +28,7 @@ const list = async (signal) => {
 
 const read = async (params, credentials, signal) => {
   try {
-    let response = await fetch(process.env.REACT_APP_NODE_JS+'users/' + params.userId, {
+    let response = await fetch(process.env.REACT_APP_NODE_JS+'/users/' + params.userId, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -44,7 +44,7 @@ const read = async (params, credentials, signal) => {
 
 const update = async (params, credentials, user) => {
   try {
-    let response = await fetch(process.env.REACT_APP_NODE_JS+'users/' + params.userId, {
+    let response = await fetch(process.env.REACT_APP_NODE_JS+'/users/' + params.userId, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -60,7 +60,7 @@ const update = async (params, credentials, user) => {
 
 const remove = async (params, credentials) => {
   try {
-    let response = await fetch(process.env.REACT_APP_NODE_JS+'users/' + params.userId, {
+    let response = await fetch(process.env.REACT_APP_NODE_JS+'/users/' + params.userId, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
@@ -76,7 +76,7 @@ const remove = async (params, credentials) => {
 
 const follow = async (params, credentials, followId) => {
   try {
-    let response = await fetch(process.env.REACT_APP_NODE_JS+'users/follow/', {
+    let response = await fetch(process.env.REACT_APP_NODE_JS+'/users/follow/', {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -93,7 +93,7 @@ const follow = async (params, credentials, followId) => {
 
 const unfollow = async (params, credentials, unfollowId) => {
   try {
-    let response = await fetch(process.env.REACT_APP_NODE_JS+'users/unfollow/', {
+    let response = await fetch(process.env.REACT_APP_NODE_JS+'/users/unfollow/', {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -110,7 +110,7 @@ const unfollow = async (params, credentials, unfollowId) => {
 
 const findPeople = async (params, credentials, signal) => {
   try {
-    let response = await fetch(process.env.REACT_APP_NODE_JS+'users/findpeople/' + params.userId, {
+    let response = await fetch(process.env.REACT_APP_NODE_JS+'/users/findpeople/' + params.userId, {
       method: 'GET',
       signal: signal,
       headers: {
