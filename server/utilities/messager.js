@@ -14,7 +14,7 @@ const sendOTP = (user) => {
     to: user.phno,
     channel: 'sms',
   })
-  // .then(message => console.log(message.sid))
+  // .then(message => console.log(message.sid)) 
     .then((verification) => {
       console.log('OTP Send SUccess');
       return true;
