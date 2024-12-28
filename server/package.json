@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --es-module-specifier-resolution=node index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -34,7 +34,7 @@
     "node-cron": "^3.0.2",
     "node-fetch": "^3.3.1",
     "nodemailer": "^6.8.0",
-    "nodemon": "^2.0.20",
+    "nodemon": "^2.0.22",
     "stripe": "^9.14.0"
   }
 }
