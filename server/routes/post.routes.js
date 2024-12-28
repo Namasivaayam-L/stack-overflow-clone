@@ -1,7 +1,7 @@
 import express from 'express'
-import {requireSignin} from '../controllers/auth'
-import {userByID} from '../controllers/users'
-import postCtrl from '../controllers/post'
+import {requireSignin} from '../controllers/auth.js'
+import {userByID} from '../controllers/users.js'
+import postCtrl from '../controllers/post.js'
 
 const router = express.Router()
 

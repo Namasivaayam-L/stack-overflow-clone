@@ -1,4 +1,4 @@
-import User from '../models/auth'
+import User from '../models/auth.js'
 
 export const addPlan = async (id, plan) => {
     try {

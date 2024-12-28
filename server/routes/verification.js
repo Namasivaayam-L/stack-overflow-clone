@@ -1,5 +1,5 @@
 import express from 'express'
-import { generateOTP, verifyOTP } from '../controllers/generateOTP'
+import { generateOTP, verifyOTP } from '../controllers/generateOTP.js'
 
 const router = express.Router()
 

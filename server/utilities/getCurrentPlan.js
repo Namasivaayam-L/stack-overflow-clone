@@ -1,4 +1,4 @@
-import User from '../models/auth'
+import User from '../models/auth.js'
 import express from 'express'
 
 const router = express.Router()

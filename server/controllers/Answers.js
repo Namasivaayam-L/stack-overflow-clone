@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
-import Questions from '../models/Questions'
-import User from '../models/auth'
-import { updateReputations } from './reputation'
+import Questions from '../models/Questions.js'
+import User from '../models/auth.js'
+import { updateReputations } from './reputation.js'
 
 export const postAnswer = async (req, res) => {
     // const { id: _id } = req.params

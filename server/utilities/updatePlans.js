@@ -1,4 +1,4 @@
-import User from '../models/auth'
+import User from '../models/auth.js'
 
 export default async function updatePlans() {
     try {

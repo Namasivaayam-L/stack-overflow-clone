@@ -1,6 +1,6 @@
-import OTP from '../models/otp'
-import User from '../models/auth'
-import Mailer from '../utilities/mailer'
+import OTP from '../models/otp.js'
+import User from '../models/auth.js'
+import Mailer from '../utilities/mailer.js'
 
 export const generateOTP = async (req, res) => {
     try {

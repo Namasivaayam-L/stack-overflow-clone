@@ -1,6 +1,6 @@
 import express from 'express'
-import getCurrentPlan from '../utilities/getCurrentPlan'
-import getNoOfQuestions from '../utilities/getNoOfQuestions'
+import getCurrentPlan from '../utilities/getCurrentPlan.js'
+import getNoOfQuestions from '../utilities/getNoOfQuestions.js'
 
 const router = express.Router()
 

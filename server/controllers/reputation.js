@@ -1,5 +1,5 @@
 import * as tf from '@tensorflow/tfjs-node';
-import User from '../models/auth'
+import User from '../models/auth.js'
 import mongoose, { isValidObjectId } from 'mongoose'
 import fetch from 'node-fetch'
 const _model = async () => {

@@ -1,6 +1,6 @@
 import express from 'express'
 import Stripe from 'stripe'
-import { addPlan } from '../utilities/addPlan'
+import { addPlan } from '../utilities/addPlan.js'
 
 const router = express.Router()
 

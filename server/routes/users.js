@@ -4,7 +4,7 @@ import {
     signup,
     signout,
     requireSignin,
-    hasAuthorization} from '../controllers/auth'
+    hasAuthorization} from '../controllers/auth.js'
 import {
     getAllUsers,
     updateProfile,
@@ -20,8 +20,8 @@ import {
     addFollower,
     removeFollowing,
     removeFollower,
-    findPeople} from '../controllers/users'
-import auth from '../middlewares/auth'
+    findPeople} from '../controllers/users.js'
+import auth from '../middlewares/auth.js'
 
 const router = express.Router()
 

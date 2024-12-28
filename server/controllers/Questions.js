@@ -1,6 +1,6 @@
-import Questions from '../models/Questions'
+import Questions from '../models/Questions.js'
 import mongoose from 'mongoose'
-import User from '../models/auth'
+import User from '../models/auth.js'
 export const AskQuestion = async (req, res) => {
     const postQuestionData = req.body
     const { noOfQuestions, planOpted } = await User.findById(postQuestionData.userId)
