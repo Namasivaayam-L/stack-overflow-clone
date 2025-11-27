@@ -1,0 +1,35 @@
+# .portfolio/config.yml
+name: Stack Overflow Clone
+slug: stack-overflow-clone
+description: >
+  A full-stack MERN application that clones Stack Overflow with additional features including 
+  AI chatbot, subscription plans with Stripe payment gateway, and social media community. 
+  Built during an internship at NullClass with user authentication, question posting, 
+  and advanced features like OTP verification and content sharing.
+tech_stack:
+  - React
+  - Node.js
+  - Express
+  - MongoDB
+  - Redux
+  - Material UI
+  - Stripe
+  - Nodemailer
+  - JWT
+  - Bcrypt
+  - TensorFlow.js
+  - Ant Design
+  - Mongoose
+tags:
+  - Full-Stack
+  - Web Application
+  - MERN
+  - Chatbot
+  - E-commerce
+is_active: true
+readme_path: README.md
+repo_url: https://github.com/Namasivaayam-L/stack-overflow-clone
+thumbnail: https://raw.githubusercontent.com/Namasivaayam-L/stack-overflow-clone/main/.portfolio/cover.png
+created_at: 2025-11-27
+updated_at: 2025-11-27
+featured: false
